@@ -37,12 +37,10 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 
 
@@ -116,7 +114,7 @@ Distributed under the AGPL-3.0 License. See `LICENSE` for more information.
 
 Robin Schapendonk - ytrobinsch2@gmail.com
 
-Project Link: [https://github.com/RobinSchapendonk/discord-support-bot/](hhttps://github.com/RobinSchapendonk/discord-support-bot/)
+Project Link: [Github](hhttps://github.com/RobinSchapendonk/discord-support-bot/)
 
 
 
