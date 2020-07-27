@@ -104,9 +104,6 @@ Client.on('ready', () => {
 });
 
 Client.on('message', async message => {
-	if (message.author != "193782837604909056") return;
-	if (message.content[0]+message.content[1] != prefix) return;
-	console.log(message.content)
 	const embed = new Discord.MessageEmbed().setColor(embedColor);
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
