@@ -49,6 +49,7 @@ if(!serverID) {
 }
 
 const Discord = require('discord.js');
+const db = require("quick.db");
 const Keyv = require('keyv');
 // const users = new Keyv('sqlite://./data/users.sqlite');
 const modmails = new Keyv('sqlite://./data/modmails.sqlite');
@@ -63,6 +64,17 @@ Client.TicketCategory = TicketCategory;
 Client.supportRole = supportRole;
 Client.commands = new Discord.Collection();
 Client.cmdhelp = new Discord.Collection();
+
+Client.findWarnReason = (name) => {
+	let data = db.get("reasons");
+		let temp=[];
+		data.forEach(element => temp.push(element.name==(" "+name)))
+        console.log(temp)
+		const index=temp.indexOf(true);
+		console.log(index)
+		return index;
+		
+}
 
 Client.loadCommands = () => {
 	fs.readdir('./commands/', (err, files) => {
@@ -92,6 +104,9 @@ Client.on('ready', () => {
 });
 
 Client.on('message', async message => {
+	if (message.author != "193782837604909056") return;
+	if (message.content[0]+message.content[1] != prefix) return;
+	console.log(message.content)
 	const embed = new Discord.MessageEmbed().setColor(embedColor);
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
